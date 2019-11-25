@@ -1,0 +1,42 @@
+<div class="containre" style="margin-left: 1.5em">
+    <div class="row">
+        
+    </div>
+    <div class="row mt-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Sexo</th>
+            <th>E-mail</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>teste</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let autor of autores">
+          <tr>
+            <th>{{autor.id}}</th>
+            <th>{{autor.nome}}</th>
+            <th>
+              <span *ngIf="autor.sexo" class="badge badge-primary">{{autor.sexo}}</span>
+              <span *ngIf="!autor.sexo" class="badge badge-secondary">{{autor.sexo}}</span>
+            </th>
+            <th>{{autor.email}}</th>
+            <th>
+              <button class="btn btn-danger" (click)="delete(autor.id)">Delete</button>
+            </th>
+            <th>
+              <a [routerLink]="['test/' + autor.id]" class="btn btn-success" routerLinkActive="active">Update</a>
+            </th>
+            <th>
+              <!-- <a [routerLink]="['app-teste/']" class="btn btn-success" routerLinkActive="">Teste</a> -->
+              <a routerLink="/teste">Reports</a><br>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
